@@ -1,0 +1,11 @@
+<?php
+    session_start();
+    if(isset($_SESSION['usuario']))
+    {
+        header('Location:../Views/Perfil.php');
+    }
+    else 
+    {
+        header('Location:../Views/inicio.php');
+    }
+?>

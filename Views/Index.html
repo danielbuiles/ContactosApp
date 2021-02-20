@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/StyleHome.css">
+    <title>Login</title>
+</head>
+<body>
+    <header>
+    </header>
+        <section>
+            <h2 class="text">Agenda de Contactos App</h2>
+            <form action="../Routes/SessionStatus.php" method="POST">
+                <div class="btn">
+                    <a href="../Routes/SessionStatus.php">Empezar!</a>
+                </div>
+            </form>
+        </section>
+    <footer>
+        <script src="../Javascript/anime.min.js"></script>
+        <script>
+            const text = document.querySelector('.text');
+            text.innerHTML = text.textContent.replace(/\S/g, "<span>$&</span>");
+
+            anime.timeline({
+                loop: false
+            })
+
+            .add({
+                targets: '.text span',
+                translateY: [-600,0],
+                scale: [10,1],
+                opacity: [0,2],
+                easing: "easeOutExpo",
+                duration: 3000,
+                delay: anime.stagger(100),
+            })
+
+            .add({
+                targets: '.text span',
+                translateX: [0,-1000],
+                scale: [1,1],
+                opacity: [2,0],
+                easing: "easeOutExpo",
+                duration: 2500,
+                delay: anime.stagger(100),
+            })
+
+            .add({
+                targets: '.text span',
+                translateX: [1000,0],
+                scale: [1,1],
+                opacity: [0,1],
+                easing: "easeOutExpo",
+                duration: 2500,
+                delay: anime.stagger(100),
+            })
+        </script>
+    </footer>
+</body>
+</html>
