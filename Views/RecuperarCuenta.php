@@ -16,12 +16,12 @@
         $ConsultaSQL="SELECT Usuario,Password,Email FROM registro WHERE Email='$Emaail'";
         $DatosObtenidos=$Catch->BuscarDatos($ConsultaSQL);
 
-        if ($DatosObtenidos) 
+        if ($DatosObtenidos)
         {
             foreach ($DatosObtenidos as $Datos) {
                 $mail = new PHPMailer(true);
-                try 
-                {                                                                    
+                try
+                {
                     $mail->isSMTP();                                            // Send using SMTP
                     $mail->Host       = 'smtp.gmail.com';                    // Set the SMTP server to send through
                     $mail->SMTPAuth   = true;                                // Enable SMTP authentication
@@ -48,7 +48,7 @@
                     echo '';
 
                 }
-                catch (Exception $e) 
+                catch (Exception $e)
                 {
                     echo "Error al enviar mensaje: {$mail->ErrorInfo}";
                 }

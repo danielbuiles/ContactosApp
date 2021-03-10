@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&family=Redressed&display=swap');
+body
+{
+    font-family: 'Noto Sans', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color:#353535;
+}
+
+.Container
+{
+    padding: 30px 15px;
+    border: 2px solid #000;
+    border-radius: 10px;
+    background-color: #E8E6DB;
+}
+.btnc
+{
+    text-align: center;
+    width: 100%;
+    letter-spacing: 2px;
+    font-size: 20px;
+}
+.btnc:hover
+{
+    background-color: #F3ECB4;
+    letter-spacing: 1px;
+}
+.link
+{
+    text-decoration: none;
+    color:#BCA659;
+}

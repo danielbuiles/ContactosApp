@@ -12,7 +12,7 @@
             } 
             catch (PDOException $Error) 
             {
-                echo ($Error.getMessage());
+                echo($Error.getMessage());
             }
         }
         public function RegistrarUsuarioDB($ConsultaSQL){
@@ -57,9 +57,24 @@
 
                 $Ejecute=$Preparo->execute();
             } 
-            catch (PDOEx $Error) 
+            catch (PDOException $Error) 
             {
                 echo ($Error.getMessage());
+            }
+        }
+        public function EditarUsuario($ConsultaSQL)
+        {
+            try 
+            {
+                $Conexion = $this->Conexion_DB();
+
+                $Prepare = $Conexion->prepare($ConsultaSQL);
+
+                $execute = $Prepare->execute();
+            } 
+            catch (PDOException $Error)
+            {
+                echo($Error.getMessage());
             }
         }
     }

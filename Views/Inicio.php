@@ -4,7 +4,7 @@
     if (isset($_POST['Btn_Inicio'])) {
         $User=$_POST['usuario'];
         $Password=$_POST['password'];
-        
+
         $Catch=new Base_Datos();
         $ConsultaSQL="SELECT Usuario,Password,Nombre FROM registro WHERE Usuario='$User'";
         $BuscarData=$Catch->BuscarDatos($ConsultaSQL);
@@ -32,12 +32,12 @@
                                 <?php session_start(); ?>
                                 <?php $_SESSION['usuario'] = $User?>
                                 <?php header("location:Perfil.php") ?>
-                            <?php } 
+                            <?php }
                             else {?>
                                 <p class="form_p--error" id='password_incorrecta'>Contraseña incorrecta</p>
                             <?php } ?>
                         <?php endforeach ?>
-                   <?php } 
+                   <?php }
                    else { ?>
                         <p class="form_p--error" id="usuario_no--resgitrado">Este Usuario no existe</p>
                    <?php } ?>

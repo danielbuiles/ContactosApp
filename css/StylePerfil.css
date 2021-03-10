@@ -52,7 +52,7 @@ font-size: 3.5rem;
   padding: 80px 50px 50px;
   box-shadow: 0 15px 30px rgb(0,0,0,0.08);
   transition:0.5s;
-  visibility:hidden;
+  visibility:visible;
 }
 
 #popup.active{
@@ -126,88 +126,3 @@ a{
 .txt_Body-Card{
   font-size: 20px;
 }
-
-/*ESTA ES LA TARGETA DEL BOTON PARA BORRAR LOS DATOS */
-
-#popup-error{
-  background-color: #FFFFFF ;  
-  position:fixed;
-  top: -100%;
-  left: 50%;
-  transform:translate(-50%,-250%);
-  z-index: 1000;
-  width: 450px;
-  box-shadow: 0 15px 30px rgb(0,0,0,0.08);
-  transition:0.5s;
-  visibility:hidden;
-  border: 3px solid #D74E32 ;
-}
-
-#popup-error.active{
-  visibility: visible;
-  top: 50%;
-}
-
-#popup-error .content{
-  position: relative;
-  width: 100%;
-  justify-content: center;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-}
-
-#popup-error .content img{
-  max-width:65px;
-}
-
-
-#popup-error .content p{
-  text-align: center;
-  font-size:16px;
-  color: #333;
-}
-
-#popup-error .content .inputbox{
-  position: relative;
-  width: 100%;
-  margin-top: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-#popup-error .content .inputbox input{
-  width: 100%;
-  border: 1px solid rgba(0,0,0,0.2);
-  padding: 15px;
-  font-size: 18px;
-}
-#popup-error .content .inputbox input[type="submit"]{
-  max-width:150px;
-  background: #03a9f4;
-  color: #fff;
-  border: none;
-}
-
-.close{
-  position: absolute;
-  top: 20px;
-  right: 20px;
-}
-
-a{
-  text-decoration: none;
-  color: black;
-}
-
-.txt-title_Card{
-  font-size: 35px;
-  font-family: 'Reggae One', cursive;
-}
-
-.txt_Body-Card{
-  font-size: 20px;
-}
-
-/*-----AQUI ESTA EL DE EDITAR----- */

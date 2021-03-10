@@ -1,18 +1,19 @@
-<?php 
+<?php
     session_start();
 
-    if (isset($_SESSION['usuario'])) 
+    if (isset($_SESSION['usuario']))
     {
         $Nick=$_SESSION['usuario'];
     }
-    else 
+    else
     {
         echo("debe autentificarse primero!!");
+        header("location:index.html");
         die();
     }
 
     include("../database/DB_savelinks.php");
-    if (isset($_POST['btn_Guardar--Contacto'])) 
+    if (isset($_POST['btn_Guardar--Contacto']))
     {
         $Nombre=$_POST['Name'];
         $Telefone=$_POST['Phone'];
@@ -47,10 +48,10 @@
         <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/album/">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
         <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
-        <link rel="stylesheet" href="../css/StylePerfiless.css">
+        <link rel="stylesheet" href="../css/StylePerfil.css">
         <link rel="stylesheet" href="../css/normalize.css">
   </head>
-    <body>   
+    <body>
         <header>
             <div class="navbar navbar-dark bg-dark shadow-sm">
                 <div class="container">
@@ -103,7 +104,7 @@
                             <a href="" class="close"><img src="../Img/cancel.png"></a>
                         </div>
                         <!-- aqui! -->
-                        <a class="btn btn-secondary my-2">♡!</a>
+                        <a class="btn btn-secondary my-2" href="https://github.com/danielbuiles/ContactosApp">★!</a>
                     </div>
                 </div>
             </section>
@@ -113,13 +114,15 @@
                         <div class="container">
                             <div class="col">
                                 <div class="card shadow-sm">
-                                    <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title></title><rect width="100%" height="100%" fill="<?php echo($RandomColor[$SelectColor]); ?>"/><text x="50%" y="50%" fill="#000" dy=".4em" class="txt-title_Card"><?php echo($Contactos['Nombre']) ?></text></svg>
+                                    <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail"
+                                     preserveAspectRatio="xMidYMid slice" focusable="false"><title></title><rect width="100%" height="100%" fill="<?php echo($RandomColor[$SelectColor]); ?>"/><text x="50%" y="50%" fill="#000" dy=".4em" class="txt-title_Card"><?php echo($Contactos['Nombre']) ?></text></svg>
                                     <div class="card-body">
                                         <p class="txt_Body-Card card-text">Numero: <?php echo($Contactos['Telefono']) ?></p>
                                         <p class="txt_Body-Card card-text">Direccion: <?php echo($Contactos['Direccion'])?></p>
                                         <div class="d-flex justify-content-between align-items-center">
                                             <div class="btn-group">
                                                 <a href="../Routes/EliminarPersona.php?id=<?php echo($Contactos['ID_Usuario'])?>"  class="Btn-Eliminar btn btn-danger">Borrar!</a>
+                                                <a href="Editar.php?id=<?php echo($Contactos['ID_Usuario'])?>"  class="btn btn-warning">Editar!</a>
                                             </div>
                                             <small class="text-muted"></small>
                                         </div>
